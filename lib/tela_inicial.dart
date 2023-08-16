@@ -8,10 +8,15 @@ class TelaInicial extends StatefulWidget {
 }
 
 class _TelaInicialState extends State<TelaInicial> {
+@override
+void initState(){
+  super.initState();
+  abrirProximaTela(context);
+}
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return Scaffold(
         body: Container(
           color: Colors.blue,
           child: Center(
@@ -25,7 +30,32 @@ class _TelaInicialState extends State<TelaInicial> {
             ),
           ),          
           ),
-      ),
+      
+    );
+  }
+}
+
+void abrirProximaTela(BuildContext context) async {
+    await Future.delayed(Duration(seconds: 5));
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => Te()),
+    );
+  }
+
+
+class Te extends StatefulWidget {
+  const Te({super.key});
+
+  @override
+  State<Te> createState() => _TeState();
+}
+
+class _TeState extends State<Te> {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(appBar: AppBar(title: Text("sdsd"),)),
     );
   }
 }
