@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'tela3.dart';
 //Criar um Widget para a tela inicial
 class TelaInicial extends StatefulWidget {
   const TelaInicial({super.key});
@@ -39,7 +40,7 @@ void abrirProximaTela(BuildContext context) async {
     await Future.delayed(Duration(seconds: 5));
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(builder: (context) => Te()),
+      MaterialPageRoute(builder: (context) => Tela3()),
     );
   }
 
